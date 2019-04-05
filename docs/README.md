@@ -1,4 +1,6 @@
 # digesterjs
+___
+
 Generates SHA digests using browsers Crypto API for getting hashes :)
 
 @ReeceM 0_o
@@ -49,3 +51,11 @@ digesterjs.__sha1Hash(payload.data, (result, err = null) => {
 })
 
 ```
+
+## example
+
+Click the button to see a hash of the current time
+
+<button class="test-button" onclick="makehash">Click Me</button>
+<br>
+<span class="__result" id="result">...</span>
