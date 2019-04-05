@@ -5,7 +5,7 @@ Generates SHA digests using browsers Crypto API for getting hashes :)
 
 [@ReeceM](https://github.com/ReeceM) 0_o
 
-## Demo
+## Test
 
 Click the button to see a hash of the current time
 
