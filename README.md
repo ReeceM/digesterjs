@@ -1,7 +1,15 @@
 # digesterjs
 Generates SHA digests using browsers Crypto API for getting hashes :)
 
+
 ## Usage
+
+```html 
+<script src="https://reecem.github.io/digesterjs/digesterjs.js"></script>
+```
+## Example usage
+
+This is how you can use the thing to generate a hash for a payload of data where you don't always have a repeatable ID
 
 ```js
 // import for ES6 type projects
