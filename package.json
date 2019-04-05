@@ -1,0 +1,24 @@
+{
+  "name": "digesterjs",
+  "version": "1.0.0",
+  "description": "Generates SHA digests using browsers Crypto API for getting hashes :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReeceM/digesterjs.git"
+  },
+  "keywords": [
+    "sha-1",
+    "digest",
+    "hash"
+  ],
+  "author": "ReeceM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReeceM/digesterjs/issues"
+  },
+  "homepage": "https://github.com/ReeceM/digesterjs#readme"
+}
