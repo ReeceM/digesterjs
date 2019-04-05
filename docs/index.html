@@ -17,11 +17,21 @@
 	<script>
 		window.$docsify = {
 			name: 'digesterjs',
-			repo: 'ReeceM/digesterjs'
+			repo: 'ReeceM/digesterjs',
+			copyCode: {
+				buttonText : 'Copy to clipboard',
+				errorText  : 'Error',
+				successText: 'Copied'
+			},
+			loadSidebar: true,
+			subMaxLevel: 2,
+			ga: 'UA-79833046-2'
 		}
 	</script>
 	<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 	<script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+	<script src="https://unpkg.com/docsify-copy-code@2"></script>
+	<script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
 	<script src="./test.js"></script>
 </body>
 
