@@ -3,9 +3,14 @@ Generates SHA digests using browsers Crypto API for getting hashes :)
 
 
 ## Usage
-
+For using it in a browser for testing...
 ```html 
-<script src="https://reecem.github.io/digesterjs/digesterjs.js"></script>
+let digesterjs = {}
+import("https://reecem.github.io/digesterjs/digesterjs.js").then(module => {
+    digesterjs = module.default
+
+    //use code here
+})
 ```
 ## Example usage
 
