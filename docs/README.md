@@ -10,13 +10,20 @@ Generates SHA digests using browsers Crypto API for getting hashes :)
 Click the button to see a hash of the current time
 
 <button class="test-button" id="test-button">Click Me</button> 
+
+
 <label> Result -> </label><span class="__result" id="result">...</span>
 
 
 ## Usage
 
 ```html 
-<script src="https://reecem.github.io/digesterjs/digesterjs.js"></script>
+let digesterjs = {}
+import("https://reecem.github.io/digesterjs/digesterjs.js").then(module => {
+    digesterjs = module.default
+
+    //use code here
+})
 ```
 ## Example usage
 
