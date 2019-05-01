@@ -73,3 +73,6 @@ digesterjs.__sha1Hash(payload.data, (result, err = null) => {
 })
 
 ```
+<p align="center">
+    <a href="https://ko-fi.com/S6S7UQ66"><img src="https://www.ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"/></a>
+</p>
