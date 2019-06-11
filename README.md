@@ -1,11 +1,15 @@
 # digesterjs
 Generates SHA digests using browsers Crypto API for getting hashes :)
 
-
 ## Usage
-
+For using it in a browser for testing...
 ```html 
-<script src="https://reecem.github.io/digesterjs/digesterjs.js"></script>
+let digesterjs = {}
+import("https://reecem.github.io/digesterjs/digesterjs.js").then(module => {
+    digesterjs = module.default
+
+    //use code here
+})
 ```
 ## Example usage
 
@@ -55,3 +59,8 @@ digesterjs.__sha1Hash(payload.data, (result, err = null) => {
 })
 
 ```
+
+## Support
+<p align="center">
+<a href='http://bit.ly/2vA7lg6' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+</p>
