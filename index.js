@@ -64,6 +64,21 @@ export default {
         return this
     },
     /**
+     * Generates a sha1 hash of the payload
+     * @param {mixed} payload the data to hash
+     * @return {Promise} the result from the hash...
+     */
+    sha1(payload) {
+        return new Promise((resolve, reject) => {
+            this.__sha1Hash(payload, (result, error = null) => {
+                if (error != null) {
+                    reject(error)
+                }
+                resolve(result)
+            })
+        })
+    },
+    /**
      * The buffer optject with the keys
      * @returns {Map} buffer mapper
      */
