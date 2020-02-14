@@ -1,12 +1,14 @@
 {
   "name": "@reecem/digesterjs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generates SHA digests using browsers Crypto API for getting hashes :)",
-  "main": "index.js",
+  "main": "dist/digester.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
+    "dev": "webpack --mode development --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/ReeceM/digesterjs/issues"
   },
-  "homepage": "https://github.com/ReeceM/digesterjs#readme"
+  "homepage": "https://github.com/ReeceM/digesterjs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
 }
