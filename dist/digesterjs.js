@@ -1,1 +1,235 @@
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.digesterjs=t():e.digesterjs=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";function r(e){return function(e){if(Array.isArray(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}n.r(t);var o=new Map;t.default={hexString:function(e){return r(new Uint8Array(e)).map((function(e){return e.toString(16).padStart(2,"0")})).join("")},digestMessage:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"SHA-1",n=new TextEncoder,r=n.encode(e);return window.crypto.subtle.digest(t,r)},__sha1Hash:function(e){var t=this,n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:function(){};return this.digestMessage(e).then((function(r){n(t.hexString(r)),t.buffer={key:t.hexString(r),value:e}})).catch((function(e){console.error(e),n(null,e)})),this},sha1:function(e){var t=this;return new Promise((function(n,r){t.__sha1Hash(e,(function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;null!=t&&r(t),n(e)}))}))},get buffer(){return this.$data.buffer},set buffer(e){var t=e.key,n=e.value;return null==this.$data.buffer&&(this.$data.buffer=new Map),this.$data().buffer.set(t,n),this},$data:function(){return{buffer:o}}}}]).default}));
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["digesterjs"] = factory();
+	else
+		root["digesterjs"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+/**
+ * generates hash strings for using to logic data things
+ * 
+ * @description wrapper for the Crypto API, digest method
+ * @version 0.1.0
+ * @author ReeceM 0_o 2019 (c)
+ * @exports default
+ */
+var map = new Map();
+/* harmony default export */ __webpack_exports__["default"] = ({
+  /**
+   * generates hash strings with passed strings and objects
+   * 
+   * @description wrapper for the Crypto API, digest method
+   * @version 0.1.0
+   * @author ReeceM 0_o 2019 (c)
+   * @package digesterjs
+   */
+
+  /**
+   * Converts the array buffer to a string hash
+   * @param {ArrayBuffer} buffer the hash
+   */
+  hexString: function hexString(buffer) {
+    var byteArray = new Uint8Array(buffer);
+
+    var hexCodes = _toConsumableArray(byteArray).map(function (value) {
+      var hexCode = value.toString(16);
+      var paddedHexCode = hexCode.padStart(2, '0');
+      return paddedHexCode;
+    });
+
+    return hexCodes.join('');
+  },
+
+  /**
+   * Digests the string to array buffer hash
+   * @param {mixed} message the string to hash
+   * @param {String} algorithm sha-1 sha-256 sha-128...
+   * @returns {Promise}
+   */
+  digestMessage: function digestMessage(message) {
+    var algorithm = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'SHA-1';
+    var encoder = new TextEncoder();
+    var data = encoder.encode(message);
+    return window.crypto.subtle.digest(algorithm, data);
+  },
+
+  /**
+   * Convert a given string to sha-1 hash and return it to the callbck when resolved
+   * @param {String|Object} message the string to digest
+   * @param {callback} callback(result, err)
+   */
+  __sha1Hash: function __sha1Hash(message) {
+    var _this = this;
+
+    var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+    this.digestMessage(message).then(function (buffer) {
+      callback(_this.hexString(buffer));
+      _this.buffer = {
+        key: _this.hexString(buffer),
+        value: message
+      };
+    })["catch"](function (error) {
+      console.error(error);
+      callback(null, error);
+    });
+    return this;
+  },
+
+  /**
+   * Generates a sha1 hash of the payload
+   * @param {mixed} payload the data to hash
+   * @return {Promise} the result from the hash...
+   */
+  sha1: function sha1(payload) {
+    var _this2 = this;
+
+    return new Promise(function (resolve, reject) {
+      _this2.__sha1Hash(payload, function (result) {
+        var error = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+        if (error != null) {
+          reject(error);
+        }
+
+        resolve(result);
+      });
+    });
+  },
+
+  /**
+   * The buffer optject with the keys
+   * @returns {Map} buffer mapper
+   */
+  get buffer() {
+    return this.$data.buffer;
+  },
+
+  /**
+   * Setter for the buffer in the MAP
+   * @param {Object}
+   */
+  set buffer(_ref) {
+    var key = _ref.key,
+        value = _ref.value;
+
+    if (this.$data.buffer == undefined) {
+      this.$data.buffer = new Map();
+    }
+
+    this.$data().buffer.set(key, value);
+    return this;
+  },
+
+  $data: function $data() {
+    return {
+      buffer: map
+    };
+  }
+});
+
+/***/ })
+/******/ ])["default"];
+});
